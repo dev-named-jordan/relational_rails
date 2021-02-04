@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get '/schools', to: 'schools#index'
   get '/students', to: 'students#index'
+
+  get '/hockeyteams', to: 'hockey_teams#index'
 end
