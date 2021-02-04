@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_03_004814) do
+ActiveRecord::Schema.define(version: 2021_02_04_002242) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2021_02_03_004814) do
     t.string "name"
     t.boolean "needs_financial_aid"
     t.bigint "school_id"
+    t.integer "school_days_completed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["school_id"], name: "index_students_on_school_id"
