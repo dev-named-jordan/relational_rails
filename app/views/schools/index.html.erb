@@ -1,5 +1,5 @@
 <h1>All Schools</h1>
 
 <%@schools.each do |school|%>
-<li><%=school.name%></li><br>
+<li><a href="/schools/<%=school.id%>"><%=school.name%></a></li><br>
 <%end%>

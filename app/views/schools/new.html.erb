@@ -1,0 +1,9 @@
+<form action="/schools" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Please Enter New School Information Below </p>
+  <div>Enter School Name <input type='text' name='school[name]'/></div><br/>
+  <div>Days in School Year <input type='number' name='school[days_in_school_year]'></div><br/>
+  <div>Accepts Financial Aid? <input type='checkbox' name='school[accepts_financial_aid]'></div><br/>
+  <input type='submit'/>
+</form>
+<br>
