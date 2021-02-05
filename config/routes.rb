@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/students', to: 'students#index'
 
   get '/hockeyteams', to: 'hockey_teams#index'
+  get '/hockeyteams/:id', to: 'hockey_teams#show'
 end
