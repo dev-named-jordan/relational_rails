@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get '/hockeyteams/new', to: 'hockey_teams#new'
   post '/hockeyteams', to: 'hockey_teams#create'
   get '/hockeyteams/:id', to: 'hockey_teams#show'
+  get '/hockeyteams/:id/edit', to: 'hockey_teams#edit'
+  patch '/hockeyteams/:id', to: 'hockey_teams#update'
 end

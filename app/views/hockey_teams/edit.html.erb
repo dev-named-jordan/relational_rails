@@ -1,0 +1,16 @@
+<form action="/hockeyteams/<%= @hockey_team.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <h1>Edit Team</h1>
+  <p>Name: <input type="text" name="hockey_team[name]" value="<%= @hockey_team.name %>"></p>
+  <p>City: <input type="text" name="hockey_team[city]" value="<%= @hockey_team.city %>"></p>
+  <p>Rank: <input type="number" name="hockey_team[rank]" value="<%= @hockey_team.rank %>" min="1" max="31"></p>
+  <p>Original Franchise?: <input list="Original Franchise" name="hockey_team[original_franchise]" value="<%= @hockey_team.original_franchise %>">
+    <datalist id="Original Franchise">
+      <option value="TRUE">
+      <option value="FALSE">
+    </datalist>
+  </p>
+  <p>Stanley Cups: <input type="number" name="hockey_team[stanley_cups]" value="<%= @hockey_team.stanley_cups %>"></p>
+  <input type="submit" /> 
+</form>
