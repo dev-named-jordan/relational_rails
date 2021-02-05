@@ -1,0 +1,14 @@
+<form action="/hockeyteams" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h1>Create a new Team:</h1>
+  <p>Name: <input type="text" name="hockey_team[name]"></p>
+  <p>City: <input type="text" name="hockey_team[city]"></p>
+  <p>Rank: <input type="number" name="hockey_team[rank]" min="1" max="31"></p>
+  <p>Original Franchise? <input type="radio" id="True" name="hockey_team[:original_franchise]">
+  <label for="True">True</label>
+  <input type="radio" name="hockey_team[:original_franchise]" id="False">
+  <label for="False">False</label> 
+  </p>
+  <p>Stanley Cups: <input type="number" name="hockey_team[stanley_cups]"></p>
+  <input type="submit"/>
+</form>

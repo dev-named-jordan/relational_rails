@@ -1,5 +1,5 @@
 <h1>Teams</h1>
-
+<a href="/hockeyteams/new">New Team</a>
 <% @hockey_teams.each do |hockey_team| %>
   <h3><a href="/hockeyteams/<%= hockey_team.id %>"><%= hockey_team.name %></a></h3>
 <% end %>
