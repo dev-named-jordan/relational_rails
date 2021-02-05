@@ -39,4 +39,9 @@ class HockeyTeamsController < ApplicationController
     hockey_team.save
     redirect_to "/hockeyteams/#{hockey_team.id}"
   end
+
+  def destroy
+    HockeyTeam.destroy(params[:id])
+    redirect_to '/hockeyteams'
+  end
 end

@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/hockeyteams/:id', to: 'hockey_teams#show'
   get '/hockeyteams/:id/edit', to: 'hockey_teams#edit'
   patch '/hockeyteams/:id', to: 'hockey_teams#update'
+  delete '/hockeyteams/:id', to: 'hockey_teams#destroy'
 end
