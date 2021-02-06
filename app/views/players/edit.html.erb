@@ -1,0 +1,18 @@
+<form action="/players/<%= @player.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <h1>Edit Player</h1>
+  <label for="name">Name:</label> 
+  <input type="text" name="player[name]" value="<%= @player.name %>" id="name"><br><br>
+  <label for="age">Age:</label> 
+  <input type="number" name="player[age]" value="<%= @player.age %>" id="age"><br><br>
+  <label for="years played">Years played:</label> 
+  <input type="number" name="player[years_played]" value="<%= @player.years_played %>"><br><br>
+  <label for="Attended College">Attended College?:</label> 
+  <input list="Attended College" name="@player[attended_college]" value="<%= @player.attended_college %>">
+  <datalist id="Attended College">
+    <option value="TRUE">
+    <option value="FALSE">
+  </datalist><br><br>
+  <input type="submit" /> 
+</form>

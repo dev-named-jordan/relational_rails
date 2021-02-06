@@ -44,4 +44,9 @@ class HockeyTeamsController < ApplicationController
     HockeyTeam.destroy(params[:id])
     redirect_to '/hockeyteams'
   end
+
+  def players
+    @hockey_team = HockeyTeam.find(params[:id])
+    @players = @hockey_team.players
+  end
 end

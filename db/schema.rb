@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +22,17 @@
     t.integer "stanley_cups"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.boolean "attended_college"
+    t.integer "years_played"
+    t.bigint "hockey_team_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["hockey_team_id"], name: "index_players_on_hockey_team_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -41,5 +53,6 @@
     t.index ["school_id"], name: "index_students_on_school_id"
   end
 
+  add_foreign_key "players", "hockey_teams"
   add_foreign_key "students", "schools"
 end
