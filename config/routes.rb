@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/hockeyteams/:id/edit', to: 'hockey_teams#edit'
   patch '/hockeyteams/:id', to: 'hockey_teams#update'
   delete '/hockeyteams/:id', to: 'hockey_teams#destroy'
+  get '/hockeyteams/:id/players', to: 'hockey_teams#players'
 
   get '/players', to: 'players#index'
 end
