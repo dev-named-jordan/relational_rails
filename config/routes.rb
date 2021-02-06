@@ -19,4 +19,7 @@ Rails.application.routes.draw do
   get '/hockeyteams/:id/players', to: 'hockey_teams#players'
 
   get '/players', to: 'players#index'
+  get '/players/:id/edit', to: 'players#edit'
+  patch '/players/:id', to: 'players#update'
+  get '/players/:id', to: 'players#show'
 end
