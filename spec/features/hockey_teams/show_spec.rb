@@ -49,4 +49,20 @@ RSpec.describe "Individual Hockey Teams Pages", type: :feature do
 
     expect(page).to have_selector("input[type=submit][value=delete]")
   end
+
+  it "Can delete the team" do
+    team_1 = HockeyTeam.create(
+      name: "Colorado Avalanche",
+      city: "Denver",
+      rank: 1,
+      original_franchise: false,
+      stanley_cups: 2
+    )
+
+    visit "/hockeyteams/#{team_1.id}"
+    find("input[type=submit][value=delete]").click
+
+    expect(href: '/hockeyteams')
+    expect(page).to_not have_content(team_1.name)
+  end
 end
