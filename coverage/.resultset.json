@@ -267,6 +267,62 @@
           null
         ]
       },
+      "/Users/trevorsuter/turing/mod2/projects/relational_rails/spec/features/hockey_teams/show_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/trevorsuter/turing/mod2/projects/relational_rails/app/models/hockey_team.rb": {
         "lines": [
           1,
@@ -289,7 +345,7 @@
           null,
           null,
           1,
-          0,
+          3,
           null,
           null,
           1,
@@ -338,6 +394,6 @@
         ]
       }
     },
-    "timestamp": 1612568479
+    "timestamp": 1612570806
   }
 }
