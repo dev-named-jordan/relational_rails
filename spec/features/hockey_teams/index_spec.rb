@@ -44,4 +44,11 @@ RSpec.describe "Hockey Teams Index Page", type: :feature do
     expect(page).to have_link("#{team_1.name}", href: "/hockeyteams/#{team_1.id}")
     expect(page).to have_link("#{team_2.name}", href: "/hockeyteams/#{team_2.id}")
   end
+
+  it "Has a link for a new team" do
+
+    visit '/hockeyteams'
+
+    expect(page).to have_link("New Team", href: "/hockeyteams/new")
+  end
 end
