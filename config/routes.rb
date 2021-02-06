@@ -23,10 +23,14 @@ Rails.application.routes.draw do
   patch '/hockeyteams/:id', to: 'hockey_teams#update'
   delete '/hockeyteams/:id', to: 'hockey_teams#destroy'
   get '/hockeyteams/:id/players', to: 'hockey_teams#players'
+  get '/hockeyteams/:id/players/new', to: 'hockey_teams#new_player'
+  post '/hockeyteams/:id/players', to: 'hockey_teams#create_player'
+  
 
   get '/players', to: 'players#index'
   get '/players/:id/edit', to: 'players#edit'
   patch '/players/:id', to: 'players#update'
   get '/players/:id', to: 'players#show'
   delete '/players/:id', to: 'players#destroy'
+  
 end
