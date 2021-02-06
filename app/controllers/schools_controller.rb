@@ -11,7 +11,7 @@ class SchoolsController < ApplicationController
   end
 
   def create
-    
+
     unless params[:school][:accepts_financial_aid]
       params[:school][:accepts_financial_aid] = false
     end
@@ -47,5 +47,10 @@ class SchoolsController < ApplicationController
     school.save
 
     redirect_to "/schools/#{school.id}"
+  end
+
+  def destroy
+    School.destroy(params[:id])
+    redirect_to '/schools'
   end
 end
