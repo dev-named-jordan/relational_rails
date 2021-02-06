@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Individual Hockey Teams Pages" do
+RSpec.describe "Individual Hockey Teams Pages", type: :feature do
 
   it "Has all team attributes" do
     team_1 = HockeyTeam.create(
