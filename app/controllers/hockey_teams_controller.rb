@@ -22,4 +22,26 @@ class HockeyTeamsController < ApplicationController
     hockey_team.save
     redirect_to '/hockeyteams'
   end
+
+  def edit
+    @hockey_team = HockeyTeam.find(params[:id])
+  end
+
+  def update
+    hockey_team = HockeyTeam.find(params[:id])
+    hockey_team.update ({
+      name: params[:hockey_team][:name],
+      city: params[:hockey_team][:city],
+      rank: params[:hockey_team][:rank],
+      original_franchise: params[:hockey_team][:original_franchise],
+      stanley_cups: params[:hockey_team][:stanley_cups]
+    })
+    hockey_team.save
+    redirect_to "/hockeyteams/#{hockey_team.id}"
+  end
+
+  def destroy
+    HockeyTeam.destroy(params[:id])
+    redirect_to '/hockeyteams'
+  end
 end

@@ -5,4 +5,12 @@
   <li><b>Rank:</b> <%= @hockey_team.rank%></li>
   <li><b>Original Team in Franchise?:</b> <%= @hockey_team.original_franchise%></li>
   <li><b>Stanley Cups:</b> <%= @hockey_team.stanley_cups%></li>
+  <li><b>Created:</b> <%= @hockey_team.created_at %></li>
+  <li><b>Updated:</b> <%= @hockey_team.updated_at %></li>
 </ul>
+<a href="/hockeyteams/<%= @hockey_team.id %>/edit">Edit Team</a>
+<form action="/hockeyteams/<%= @hockey_team.id %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete"/>
+</form>
