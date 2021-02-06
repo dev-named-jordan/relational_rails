@@ -1,5 +1,5 @@
 <h1>Roster</h1>
-
+<a href="/hockeyteams/<%= @hockey_team.id %>/players/new"><b>New Player</b></a>
 <%= @players.each do |player| %>
 <h2><%= player.name %></h2>
 <h5><b>Age:</b> <%= player.age %><br><br>
@@ -8,4 +8,4 @@
 <b>Team ID:</b> <%= player.hockey_team_id %><br><br>
 <b>Created:</b> <%= player.created_at %><br><br>
 <b>Updated:</b> <%= player.updated_at %></h5>
-<% end %>
+<% end %> <br><br>

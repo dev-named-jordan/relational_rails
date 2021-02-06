@@ -48,5 +48,22 @@ class HockeyTeamsController < ApplicationController
   def players
     @hockey_team = HockeyTeam.find(params[:id])
     @players = @hockey_team.players
+    @team_id = params[:id].to_i
+  end
+
+  def new_player
+    @team = HockeyTeam.all.find{|hockey_team| hockey_team.id == params[:id].to_i}
+  end
+
+  def create_player
+    hockey_team = HockeyTeam.find(params[:team_id])
+    player = hockey_team.players.new({
+      name: params[:player][:name],
+      age: params[:player][:age],
+      attended_college: params[:player][:attended_college],
+      years_played: params[:player][:years_played],
+    })
+    player.save
+    redirect_to "/hockeyteams/#{hockey_team.id}/players"
   end
 end
