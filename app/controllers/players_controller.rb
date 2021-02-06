@@ -24,4 +24,9 @@ class PlayersController < ApplicationController
     player.save
     redirect_to "/players/#{player.id}"
   end
+
+  def destroy
+    Player.destroy(params[:id])
+    redirect_to '/players'
+  end
 end
