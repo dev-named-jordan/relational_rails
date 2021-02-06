@@ -16,8 +16,8 @@ class PlayersController < ApplicationController
     player = Player.find(params[:id])
     player.update ({
       name: params[:player][:name],
-      age: params[:player][:age],
       attended_college: params[:player][:attended_college],
+      age: params[:player][:age],
       years_played: params[:player][:years_played]
     })
 
