@@ -2,6 +2,9 @@ class PlayersController < ApplicationController
 
   def index
     @players = Player.all
+    @college_players = @players.find_all do |player|
+      player.attended_college == true
+    end
   end
 
   def show
