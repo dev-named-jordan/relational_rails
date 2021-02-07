@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_05_202709) do
   create_table "schools", force: :cascade do |t|
     t.string "name"
     t.integer "days_in_school_year"
-    t.boolean "accepts_financial_aid", default: false, null: false
+    t.boolean "accepts_financial_aid", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

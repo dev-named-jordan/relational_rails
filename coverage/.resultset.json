@@ -270,6 +270,22 @@
           null
         ]
       },
+      "/Users/jordanbeck/turing/module_2/projects/relational_rails/spec/models/school_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/jordanbeck/turing/module_2/projects/relational_rails/app/models/school.rb": {
         "lines": [
           1,
@@ -287,6 +303,72 @@
           null
         ]
       },
+      "/Users/jordanbeck/turing/module_2/projects/relational_rails/app/controllers/schools_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null,
+          1,
+          0,
+          0,
+          null,
+          null
+        ]
+      },
+      "/Users/jordanbeck/turing/module_2/projects/relational_rails/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/jordanbeck/turing/module_2/projects/relational_rails/app/models/student.rb": {
         "lines": [
           1,
@@ -295,6 +377,6 @@
         ]
       }
     },
-    "timestamp": 1612653341
+    "timestamp": 1612658835
   }
 }
