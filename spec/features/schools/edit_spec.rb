@@ -8,6 +8,7 @@ RSpec.describe 'As a visitor' do
                                 accepts_financial_aid: false)
 
       visit "/schools/#{school_1.id}"
+
       expect(page).to have_link('Update School')
     end
 
@@ -17,6 +18,7 @@ RSpec.describe 'As a visitor' do
                                 accepts_financial_aid: false)
 
       visit "/schools/#{school_1.id}"
+
       click_link "Update School"
       expect(current_path).to eq("/schools/#{school_1.id}/edit")
     end
@@ -27,6 +29,7 @@ RSpec.describe 'As a visitor' do
                                 accepts_financial_aid: false)
 
       visit "/schools/#{school_1.id}"
+      
       expect(page).to have_link("Update School")
       click_link "Update School"
 
