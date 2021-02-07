@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2021_02_06_024951) do
     t.integer "rank"
     t.boolean "original_franchise"
     t.integer "stanley_cups"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "players", force: :cascade do |t|
