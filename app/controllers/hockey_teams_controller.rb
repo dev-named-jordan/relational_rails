@@ -48,7 +48,7 @@ class HockeyTeamsController < ApplicationController
   def players
     @hockey_team = HockeyTeam.find(params[:id])
     @players = @hockey_team.players
-    @team_id = params[:id].to_i
+    # @team_id = params[:id].to_i
   end
 
   def new_player
