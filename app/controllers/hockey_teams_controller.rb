@@ -47,7 +47,13 @@ class HockeyTeamsController < ApplicationController
 
   def players
     @hockey_team = HockeyTeam.find(params[:id])
-    @players = @hockey_team.players
+    @all_players = @hockey_team.players
+    if params[:search]
+      @players = @all_players.where('age > ?', params[:search])
+      
+    else
+      @players = @all_players
+    end
     # @team_id = params[:id].to_i
   end
 
@@ -65,5 +71,9 @@ class HockeyTeamsController < ApplicationController
     })
     player.save
     redirect_to "/hockeyteams/#{hockey_team.id}/players"
+  end
+
+  def players_over_certain_age
+    @players = Player.find(player.age > 30)
   end
 end

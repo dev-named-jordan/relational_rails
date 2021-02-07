@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Players Index Page', type: :feature do
 
-  it 'Can see all players with attributes' do
+  it 'Can see all players who attended college with attributes' do
     team_1 = HockeyTeam.create(
       name: "Colorado Avalanche",
       city: "Denver",
@@ -13,7 +13,7 @@ RSpec.describe 'Players Index Page', type: :feature do
     player = team_1.players.create(
       name: "Trevor Suter",
       age: 24,
-      attended_college: false,
+      attended_college: true,
       years_played: 2
     )
 
@@ -39,7 +39,7 @@ RSpec.describe 'Players Index Page', type: :feature do
     player = team_1.players.create(
       name: "Trevor Suter",
       age: 24,
-      attended_college: false,
+      attended_college: true,
       years_played: 2
     )
 
