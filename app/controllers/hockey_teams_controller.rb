@@ -47,8 +47,14 @@ class HockeyTeamsController < ApplicationController
 
   def players
     @hockey_team = HockeyTeam.find(params[:id])
-    @players = @hockey_team.players
-    @team_id = params[:id].to_i
+    @all_players = @hockey_team.players
+    if params[:search]
+      @players = @all_players.where('age > ?', params[:search])
+      
+    else
+      @players = @all_players
+    end
+    # @team_id = params[:id].to_i
   end
 
   def new_player

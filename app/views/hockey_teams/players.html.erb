@@ -1,11 +1,17 @@
 <h1>Roster</h1>
-<a href="/hockeyteams/<%= @hockey_team.id %>/players/new"><b>New Player</b></a>
+<h2 style="color:red"><i>Total Players On Roster: <%= @all_players.count %></i></h2>
+<a href="/hockeyteams/<%= @hockey_team.id %>/players/new"><b>New Player</b></a><br><br>
+<%= form_tag "/hockeyteams/#{@hockey_team.id}/players", method: :get do %>
+  <i><%= label_tag  "Find Players over the age of:" %></i>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
 <%= @players.each do |player| %>
-<h2><%= player.name %></h2>
-<h5><b>Age:</b> <%= player.age %><br><br>
+<h3><%= player.name %></h3>
+<h6><b>Age:</b> <%= player.age %><br><br>
 <b>Attended College?:</b> <%= player.attended_college %><br><br>
 <b>Years Played:</b> <%= player.years_played %><br><br>
 <b>Team ID:</b> <%= player.hockey_team_id %><br><br>
 <b>Created:</b> <%= player.created_at %><br><br>
-<b>Updated:</b> <%= player.updated_at %></h5>
+<b>Updated:</b> <%= player.updated_at %></h6>
 <% end %> <br><br>
