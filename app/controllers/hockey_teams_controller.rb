@@ -72,8 +72,4 @@ class HockeyTeamsController < ApplicationController
     player.save
     redirect_to "/hockeyteams/#{hockey_team.id}/players"
   end
-
-  def players_over_certain_age
-    @players = Player.find(player.age > 30)
-  end
 end
