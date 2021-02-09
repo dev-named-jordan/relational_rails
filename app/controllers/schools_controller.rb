@@ -53,4 +53,10 @@ class SchoolsController < ApplicationController
     School.destroy(params[:id])
     redirect_to '/schools'
   end
+
+  def students
+    @school = School.find(params[:id])
+    # require "pry"; binding.pry
+    @students = @school.students
+  end
 end
