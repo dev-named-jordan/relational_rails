@@ -18,4 +18,8 @@ class StudentsController < ApplicationController
 
     redirect_to '/students'
   end
+
+  def show
+    @student = Student.find(params[:id])
+  end
 end

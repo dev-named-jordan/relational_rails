@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/schools/:id/students', to: 'schools#students'
 
   get '/students', to: 'students#index'
+  get '/students/:id', to: 'students#show'
 
   get '/hockeyteams', to: 'hockey_teams#index'
   get '/hockeyteams/new', to: 'hockey_teams#new'
