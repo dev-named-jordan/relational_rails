@@ -22,4 +22,26 @@ class StudentsController < ApplicationController
   def show
     @student = Student.find(params[:id])
   end
+
+  def edit
+    @student = Student.find(params[:id])
+  end
+
+  def update
+    student = Student.find(params[:id])
+
+    unless params[:student][:needs_financial_aid]
+      params[:student][:needs_financial_aid] = false
+    end
+
+    student.update({
+      name: params[:student][:name],
+      school_days_completed: params[:student][:school_days_completed],
+      needs_financial_aid: params[:student][:needs_financial_aid]
+      })
+
+    student.save
+
+    redirect_to "/students/#{student.id}"
+  end
 end

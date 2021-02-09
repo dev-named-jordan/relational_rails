@@ -1,4 +1,4 @@
-<h1>All Students</h1>
+<h1>Student</h1>
 
   <li>Name - <%=@student.name%></li><br>
   <li>Student ID - <%=@student.id%></li><br>
@@ -7,3 +7,4 @@
   <li>School Days Competed - <%=@student.school_days_completed%></li><br>
   <li>Created On - <%=@student.created_at%></li><br>
   <li>Updated On - <%=@student.updated_at%></li><br>
+  <a href="/students/<%=@student.id%>/edit"> Edit Student</a>

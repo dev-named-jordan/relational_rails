@@ -17,6 +17,8 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(student_2.name)
       expect(page).to have_content(student_2.school_days_completed)
       expect(page).to have_content(student_2.needs_financial_aid)
+      expect(page).to have_link("#{student_1.name}", href: "/students/#{student_1.id}")
+      expect(page).to have_link("#{student_2.name}", href: "/students/#{student_2.id}")
     end
   end
 end

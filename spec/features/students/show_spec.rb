@@ -6,8 +6,8 @@ RSpec.describe "School Student Page" do
              accepts_financial_aid: false)
 
     student_1 = school_1.students.create!(name: "Tim",
-                        school_days_completed: 200,
-                          needs_financial_aid: true)
+                         school_days_completed: 200,
+                           needs_financial_aid: true)
 
 
     visit "/students/#{student_1.id}"
@@ -18,5 +18,6 @@ RSpec.describe "School Student Page" do
     expect(page).to have_content(student_1.school_days_completed)
     expect(page).to have_content(student_1.created_at)
     expect(page).to have_content(student_1.updated_at)
+    expect(page).to have_link("Edit Student", href: "/students/#{student_1.id}/edit")
   end
 end

@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'
+  get '/students/:id/edit', to: 'students#edit'
+  patch '/students/:id', to: 'students#update'
 
   get '/hockeyteams', to: 'hockey_teams#index'
   get '/hockeyteams/new', to: 'hockey_teams#new'

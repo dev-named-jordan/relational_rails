@@ -1,7 +1,7 @@
 <h1>All Students</h1>
 
 <%= @students.each do |student| %>
-  <li>Name - <%=student.name%></li><br>
+  <li>Name - <a href="/students/<%=student.id%>"><%=student.name%></a></li><br>
   <li>Student ID - <%=student.id%></li><br>
   <li>Needs Financial Aid? - <%=student.needs_financial_aid%></li><br>
   <li>School ID - <%=student.school_id%></li><br>
