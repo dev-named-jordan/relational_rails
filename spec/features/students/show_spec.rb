@@ -20,4 +20,23 @@ RSpec.describe "School Student Page" do
     expect(page).to have_content(student_1.updated_at)
     expect(page).to have_link("Edit Student", href: "/students/#{student_1.id}/edit")
   end
+  it 'Has ability to delete' do
+
+    school_1 = School.create!(name: "Turing",
+               days_in_school_year: 256,
+             accepts_financial_aid: false)
+
+    student_1 = school_1.students.create!(name: "Tim",
+                         school_days_completed: 200,
+                           needs_financial_aid: true)
+
+    visit "/students/#{student_1.id}"
+
+    expect(page).to have_content(student_1.name)
+
+    click_link "Delete Student"
+    
+    expect(page).not_to have_content(student_1.name)
+    expect(current_path).to eq('/students')
+  end
 end

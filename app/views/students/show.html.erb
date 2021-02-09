@@ -8,3 +8,5 @@
   <li>Created On - <%=@student.created_at%></li><br>
   <li>Updated On - <%=@student.updated_at%></li><br>
   <a href="/students/<%=@student.id%>/edit"> Edit Student</a>
+  <p><%= link_to "Delete Student", "/students/#{@student.id}", method: :delete %></p>
+  

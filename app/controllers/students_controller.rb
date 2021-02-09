@@ -44,4 +44,9 @@ class StudentsController < ApplicationController
 
     redirect_to "/students/#{student.id}"
   end
+
+  def destroy
+    Student.destroy(params[:id])
+    redirect_to '/students'
+  end
 end
