@@ -7,7 +7,7 @@ RSpec.describe School, type: :model do
   end
 
   describe 'relationships' do
-    it {should have_many :student}
+    it {should have_many :students}
   end
 end
 

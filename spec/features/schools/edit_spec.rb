@@ -23,13 +23,13 @@ RSpec.describe 'As a visitor' do
       expect(current_path).to eq("/schools/#{school_1.id}/edit")
     end
 
-    it 'When I fill out the form and submit the School is updated' do
+    it 'When I fill out the form and submit, School is updated' do
       school_1 = School.create!(name: "Turing",
                                 days_in_school_year: 256,
                                 accepts_financial_aid: false)
 
       visit "/schools/#{school_1.id}"
-      
+
       expect(page).to have_link("Update School")
       click_link "Update School"
 

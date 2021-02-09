@@ -8,11 +8,9 @@ Rails.application.routes.draw do
   get '/schools/:id', to: 'schools#show'
   get '/schools/:id/edit', to: 'schools#edit'
   patch '/schools/:id', to: 'schools#update'
-  # resources :schools
   delete '/schools/:id', to: 'schools#destroy'
-  # get '/schools/:id/destroy', to: 'schools#destroy'
-  # delete '/schools/:id', to: 'schools#destroy'
-  #students routes
+  get '/schools/:id/students', to: 'schools#students'
+
   get '/students', to: 'students#index'
 
   get '/hockeyteams', to: 'hockey_teams#index'
@@ -25,12 +23,12 @@ Rails.application.routes.draw do
   get '/hockeyteams/:id/players', to: 'hockey_teams#players'
   get '/hockeyteams/:id/players/new', to: 'hockey_teams#new_player'
   post '/hockeyteams/:id/players', to: 'hockey_teams#create_player'
-  
+
 
   get '/players', to: 'players#index'
   get '/players/:id/edit', to: 'players#edit'
   patch '/players/:id', to: 'players#update'
   get '/players/:id', to: 'players#show'
   delete '/players/:id', to: 'players#destroy'
-  
+
 end

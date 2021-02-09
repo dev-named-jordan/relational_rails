@@ -2,6 +2,7 @@
 
 <a href="/schools/<%= @school.id %>/edit"> Update School</a><br><br>
 <p><%= link_to "Delete School", "/schools/#{@school.id}", method: :delete %></p>
+<a href="/schools/<%= @school.id %>/students"> All Students</a><br><br>
 
 <li>Name - <%=@school.name%></li><br>
 <li>Days in School Year - <%=@school.days_in_school_year%></li><br>
