@@ -1,5 +1,11 @@
+<a href="/players">Players Who Played College</a><br>
 <h1>Teams</h1>
 <a href="/hockeyteams/new">New Team</a>
 <% (@hockey_teams.order("hockey_teams.created_at DESC")).each do |hockey_team| %>
-  <h3><a href="/hockeyteams/<%= hockey_team.id %>"><b><%= hockey_team.name %></b></a>      <small><i><a href="/hockeyteams/<%= hockey_team.id %>/edit">Edit Team</a></small></i>     (<small><i><%= hockey_team.created_at%></i></small>)</h3>
+  <h3><a href="/hockeyteams/<%= hockey_team.id %>"><b><%= hockey_team.name %></b></a>      (<small><i><%= hockey_team.created_at%></i></small>)<br><br>
+    <small><i><a href="/hockeyteams/<%= hockey_team.id %>/edit">Edit Team</a></small></i><br><br>
+    <form action="/hockeyteams/<%= hockey_team.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="delete"/></h3><hr>
 <% end %>

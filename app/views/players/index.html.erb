@@ -1,11 +1,16 @@
+<a href="/hockeyteams">Hockey Teams</a><br>
 <h1><i>Players That Attended College</i></h1>
 
 <% @college_players.each do |player| %>
-  <h2><a href="/players/<%= player.id %>"><%= player.name %></a></h2>
+  <h2><a href="/players/<%= player.id %>"><%= player.name %></a></h2><a href="/players/<%= player.id %>/edit">Edit Player</a><br><br>       
+  <form action="/players/<%= player.id %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete"/>
   <h5><b>Age:</b> <%= player.age %><br><br>
   <b>Attended College?:</b> <%= player.attended_college %><br><br>
   <b>Years Played:</b> <%= player.years_played %><br><br>
   <b>Team ID:</b> <%= player.hockey_team_id %><br><br>
   <b>Created:</b> <%= player.created_at %><br><br>
   <b>Updated:</b> <%= player.updated_at %></h5>
-<% end %>
+<% end %> <hr>
