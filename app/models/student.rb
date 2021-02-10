@@ -3,4 +3,8 @@ class Student < ApplicationRecord
   validates_inclusion_of :needs_financial_aid, :in => [true, false]
 
   belongs_to :school
+
+  def self.needs_financial_aid
+    where(needs_financial_aid: true)
+  end
 end
