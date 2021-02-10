@@ -6,8 +6,12 @@ RSpec.describe 'As a visitor' do
       school_1 = School.create!(name: "Turing",
                                 days_in_school_year: 256,
                                 accepts_financial_aid: false)
-      student_1 = school_1.students.create!(name: "Tim", school_days_completed: 200, needs_financial_aid: true)
-      student_2 = school_1.students.create!(name: "Jim", school_days_completed: 243, needs_financial_aid: true)
+      student_1 = school_1.students.create!(name: "Tim",
+                           school_days_completed:
+                        200, needs_financial_aid: true)
+      student_2 = school_1.students.create!(name: "Jim",
+                           school_days_completed:
+                        243, needs_financial_aid: true)
 
       visit '/students'
 
@@ -19,6 +23,7 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content(student_2.needs_financial_aid)
       expect(page).to have_link("#{student_1.name}", href: "/students/#{student_1.id}")
       expect(page).to have_link("#{student_2.name}", href: "/students/#{student_2.id}")
+      # expect(page).to have_link("Create Student", href: "/schools/#{school_1.id}/students/new")
     end
   end
 end

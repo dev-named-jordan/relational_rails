@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a visitor' do
-  describe 'When I visit the Schhol Index page' do
+  describe 'When I visit the School Index page' do
     it 'Add New School link takes us to "/schools/new"' do
 
       visit '/schools'

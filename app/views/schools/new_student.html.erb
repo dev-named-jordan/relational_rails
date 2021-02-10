@@ -1,0 +1,10 @@
+<form action="/schools/<%= @school.id %>/students" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <p>Please Enter New Student Information Below </p>
+  <div>Enter Student Name <input type='text' name='student[name]'/></div><br/>
+  <div>School Days Completed <input type='number' name='student[school_days_completed]'></div><br/>
+  <div>Needs Financial Aid? <input type='checkbox' name='student[needs_financial_aid]'></div><br/>
+  <input type='submit' value="Create Student"/>
+</form>
+<br>
+<input type="hidden" name="school_id" value="<%= @school.id %>">
