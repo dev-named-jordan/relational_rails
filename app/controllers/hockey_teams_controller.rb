@@ -41,18 +41,21 @@ class HockeyTeamsController < ApplicationController
   end
 
   def destroy
+    HockeyTeam.find(params[:id]).players.select do |player|
+      player.destroy
+    end
     HockeyTeam.destroy(params[:id])
     redirect_to '/hockeyteams'
   end
 
   def players
     @hockey_team = HockeyTeam.find(params[:id])
-    @all_players = @hockey_team.players
     if params[:search]
-      @players = @all_players.where('age > ?', params[:search])
-      
-    else
-      @players = @all_players
+    @players = @hockey_team.players.where('age > ?', params[:search])
+    elsif params[:sort]
+      @players = @hockey_team.players.order(:name)
+    else params[:id]
+      @players = @hockey_team.players
     end
     # @team_id = params[:id].to_i
   end

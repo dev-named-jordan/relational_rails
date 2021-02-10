@@ -1,3 +1,5 @@
+<a href="/players">Players Who Played College</a><br>
+<a href="/hockeyteams">Hockey Teams</a><br>
 <form action="/hockeyteams/<%= @hockey_team.id %>" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="_method" value="PATCH" />
