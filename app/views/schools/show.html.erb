@@ -1,6 +1,6 @@
 <h1>Schools Info</h1>
-
-<a href="/schools/<%= @school.id %>/edit"> Update School</a><br><br>
+<li>Student Count - <%=@school.students.count%></li><br>
+<a href="/schools/<%= @school.id %>/edit"> Update School</a><br>
 <p><%= link_to "Delete School", "/schools/#{@school.id}", method: :delete %></p>
 <a href="/schools/<%= @school.id %>/students"> All Students</a><br><br>
 <a href="/schools/<%= @school.id %>/students/new"> Create Student</a><br><br>

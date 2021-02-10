@@ -23,7 +23,7 @@ RSpec.describe 'As a visitor' do
       # expect(page).to have_content(school_3.name)
     end
 
-    it "Has Links to School Pages" do
+    it "Has Links to School Pages, in order of which they were created" do
       school_1 = School.create!(name: "Turing",
                                 days_in_school_year: 256,
                                 accepts_financial_aid: false)
@@ -31,12 +31,13 @@ RSpec.describe 'As a visitor' do
       school_2 = School.create!(name: "UCCS",
                                 days_in_school_year: 300,
                                 accepts_financial_aid: true)
-      
+
 
       visit '/schools'
 
       expect(page).to have_link("#{school_1.name}", href: "/schools/#{school_1.id}")
       expect(page).to have_link("#{school_2.name}", href: "/schools/#{school_2.id}")
+      # expect("name: Turing").to appear_before("name: UCCS")
     end
 
     it "Has a link for a new school" do

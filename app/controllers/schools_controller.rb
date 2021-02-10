@@ -60,14 +60,13 @@ class SchoolsController < ApplicationController
   end
 
   def new_student
-    # @school = School.find(params[:id])
-    @school = School.all.find{ |school| school.id == params[:id].to_i }
+    @school = School.find(params[:id])
+    # @school = School.all.find{ |school| school.id == params[:id].to_i }
     # require "pry"; binding.pry
   end
 
   def create_student
     school = School.find(params[:id])
-    # require "pry"; binding.pry
     student = school.students.new({
       name: params[:student][:name],
       school_days_completed: params[:student][:school_days_completed],

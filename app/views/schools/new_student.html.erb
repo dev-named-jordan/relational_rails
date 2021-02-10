@@ -1,4 +1,4 @@
-<form action="/schools/<%= @school.id %>/students" method="post">
+<form action="/schools/<%= @school.id %>/students/" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <p>Please Enter New Student Information Below </p>
   <div>Enter Student Name <input type='text' name='student[name]'/></div><br/>
