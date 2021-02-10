@@ -9,7 +9,6 @@ RSpec.describe 'As a visitor' do
                accepts_financial_aid: false)
 
       visit "/schools/#{school_1.id}"
-save_and_open_page
 
       click_link "Create Student"
       fill_in 'student[name]', :with => 'Turing'
