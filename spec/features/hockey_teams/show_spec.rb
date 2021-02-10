@@ -58,11 +58,18 @@ RSpec.describe "Individual Hockey Teams Pages", type: :feature do
       original_franchise: false,
       stanley_cups: 2
     )
+    player = team_1.players.create(
+      name: "Trevor Suter",
+      age: 24,
+      attended_college: true,
+      years_played: 2
+    )
 
     visit "/hockeyteams/#{team_1.id}"
     find("input[type=submit][value=delete]").click
 
     expect(href: '/hockeyteams')
     expect(page).to_not have_content(team_1.name)
+    expect(href: '/players').to_not have_content(player.name)
   end
 end
