@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'welcome#index'
-  #schools routes
+  # schools routes
   get '/schools', to: 'schools#index'
   get '/schools/new', to: 'schools#new'
   post '/schools', to: 'schools#create'
@@ -13,6 +13,10 @@ Rails.application.routes.draw do
 
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'
+  get '/students/:id/edit', to: 'students#edit'
+  patch '/students/:id', to: 'students#update'
+  delete '/students/:id', to: 'students#destroy'
+
 
   get '/hockeyteams', to: 'hockey_teams#index'
   get '/hockeyteams/new', to: 'hockey_teams#new'

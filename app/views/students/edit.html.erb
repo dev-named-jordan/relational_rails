@@ -1,0 +1,9 @@
+<form action="/students/<%= @student.id %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <p>Edit Student</p>
+  <input type='text' name='student[name]' value="<%= @student.name %>"/><br/>
+  <input type='text' name='student[school_days_completed]' value="<%= @student.school_days_completed %>"/><br/>
+  <div><input type='checkbox' name='student[needs_financial_aid]'> Needs Financial Aid? </div><br/>
+  <input type='submit' value="Edit This School"/>
+</form>
