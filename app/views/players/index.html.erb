@@ -1,6 +1,6 @@
 <h1><i>Players That Attended College</i></h1>
 
-<%= @college_players.each do |player| %>
+<% @college_players.each do |player| %>
   <h2><a href="/players/<%= player.id %>"><%= player.name %></a></h2>
   <h5><b>Age:</b> <%= player.age %><br><br>
   <b>Attended College?:</b> <%= player.attended_college %><br><br>
