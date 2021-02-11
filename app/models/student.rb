@@ -7,12 +7,8 @@ class Student < ApplicationRecord
   def self.needs_financial_aid
     where needs_financial_aid: true
   end
-  #
-  # def self.alphabetical
-  #   order(:name)
-  # end
 
-  def self.alphabetize
-    Student.order(:name).where("needs_financial_aid = ?", true)
+  def self.order_by_name
+    order(:name)
   end
 end
