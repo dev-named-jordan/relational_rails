@@ -5,6 +5,14 @@ class Student < ApplicationRecord
   belongs_to :school
 
   def self.needs_financial_aid
-    where(needs_financial_aid: true)
+    where needs_financial_aid: true
+  end
+  #
+  # def self.alphabetical
+  #   order(:name)
+  # end
+
+  def self.alphabetize
+    Student.order(:name).where("needs_financial_aid = ?", true)
   end
 end
