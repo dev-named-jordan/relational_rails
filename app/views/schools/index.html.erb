@@ -1,8 +1,12 @@
-<h1>All Schools</h1>
+<h1>All Schools</h1><br>
 
-<a href="/schools/new">Add New School</a><br><br>
+<a href="/schools/new">Add New School</a><br><br><hr>
 
 <%@schools.each do |school|%>
+<li><a href="/schools/<%=school.id%>"><%=school.name%></a><br><br><%=school.created_at%></li><br>
   <a href="/schools/<%=school.id%>/edit">Edit Info</a><br><br>
-  <li><a href="/schools/<%=school.id%>"><%=school.name%></a><hr><%=school.created_at%></li><br>
+  <form action="/schools/<%= school.id %>" method="POST">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" value="Delete School"/><hr>
 <%end%>

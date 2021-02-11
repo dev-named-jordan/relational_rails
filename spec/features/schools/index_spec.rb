@@ -40,6 +40,25 @@ RSpec.describe 'As a visitor' do
       expect(page).to have_content("Edit Student")
     end
 
+    it 'I see a delete link for every school' do
+      school_1 = School.create!(name: "Turing",
+                 days_in_school_year: 256,
+               accepts_financial_aid: false)
+
+      student_1 = school_1.students.create!(name: "Tom",
+                           school_days_completed: 200,
+                             needs_financial_aid: true)
+
+      visit "/schools"
+      # require "pry"; binding.pry
+# save_and_open_page
+      click_button("Delete School")
+
+      # visit "/students/#{student_1.id}/destroy"
+
+      expect(page).not_to have_content(school_1.name)
+    end
+
     it "Has Links to School Pages, in order of which they were created" do
       school_1 = School.create!(name: "Turing",
                                 days_in_school_year: 256,

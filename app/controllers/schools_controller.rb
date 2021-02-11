@@ -1,6 +1,7 @@
 class SchoolsController < ApplicationController
   def index
     @schools = School.all
+    # @school = School.find(params[:id])
   end
 
   def show
@@ -50,6 +51,11 @@ class SchoolsController < ApplicationController
   end
 
   def destroy
+    # require "pry"; binding.pry
+    @school = School.find(params[:id])
+    # require "pry"; binding.pry
+    # @school.students.destroy(:school_id = params[:id])
+    @school.students.destroy_all
     School.destroy(params[:id])
     redirect_to '/schools'
   end
