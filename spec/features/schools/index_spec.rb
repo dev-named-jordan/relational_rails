@@ -37,7 +37,7 @@ RSpec.describe 'As a visitor' do
 
       expect(page).to have_link("#{school_1.name}", href: "/schools/#{school_1.id}")
       expect(page).to have_link("#{school_2.name}", href: "/schools/#{school_2.id}")
-      # expect("name: Turing").to appear_before("name: UCCS")
+      expect("#{school_1.name}").to appear_before("#{school_2.name}")
     end
 
     it "Has a link for a new school" do

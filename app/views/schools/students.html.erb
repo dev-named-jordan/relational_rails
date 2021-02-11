@@ -1,11 +1,24 @@
 <h1>All Students</h1>
 
+<%=form_with url:"/schools/#{@school.id}/students", local: :true, method: :get do |form|%>
+  <%=form.label 'Search students by number of school_days_completed: '%><br><br>
+  <%=form.text_field :search%>
+  <%=form.submit 'Submit', name: 'Submit'%>
+<%end%><br>
+
+<a href="/schools/<%=@school.id%>/students" >Alphabetize Students</a><br><br>
+
+<%=form_with url:"/schools/#{@school.id}/students", method: :get do |form|%>
+  <%=form.label 'Sort names by alphabetical order: '%><br><br>
+  <%=form.submit 'Submit', name: 'Sort Students Alphabetically'%>
+<%end%><br>
+
 <%@students.each do |student|%>
   <li>Name - <%=student.name%></li><br>
   <li>Student ID - <%=student.id%></li><br>
   <li>Needs Financial Aid? - <%=student.needs_financial_aid%></li><br>
   <li>School ID - <%=student.school_id%></li><br>
-  <li>School Days Competed - <%=student.school_days_completed%></li><br>
+  <li>School Days Completed - <%=student.school_days_completed%></li><br>
   <li>Created On - <%=student.created_at%></li><br>
   <li>Updated On - <%=student.updated_at%></li><br>
 <%end%>

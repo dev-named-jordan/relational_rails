@@ -55,8 +55,15 @@ class SchoolsController < ApplicationController
   end
 
   def students
+    # require "pry"; binding.pry
     @school = School.find(params[:id])
-    @students = @school.students
+    if params[:search]
+      @students = @school.students.where('school_days_completed >= ?', params[:search])
+    # elsif name: 'Sort Students Alphabetically'
+    #   @students = @school.alphabetize
+    else
+      @students = @school.students
+    end
   end
 
   def new_student

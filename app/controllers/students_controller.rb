@@ -1,6 +1,7 @@
 class StudentsController < ApplicationController
   def index
-    @students = Student.all
+    @students = Student.needs_financial_aid
+    # @students = Student.where('needs = true')
   end
 
   def create
