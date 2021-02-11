@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/schools/:id/students/new', to: 'schools#new_student'
   post '/schools/:id/students', to: 'schools#create_student'
   get '/schools/school.id/edit', to: 'schools#edit'
+  # delete '/schools', to: 'schools#destroy'
 
   get '/students', to: 'students#index'
   get '/students/:id', to: 'students#show'
