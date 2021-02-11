@@ -57,7 +57,6 @@ class HockeyTeamsController < ApplicationController
     else params[:id]
       @players = @hockey_team.players
     end
-    # @team_id = params[:id].to_i
   end
 
   def new_player

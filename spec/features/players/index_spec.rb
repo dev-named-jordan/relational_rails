@@ -47,4 +47,47 @@ RSpec.describe 'Players Index Page', type: :feature do
 
     expect(page).to have_link("#{player.name}" ,href: "/players/#{player.id}")
   end
+
+  it 'Has a link to the hockey teams index page' do
+
+    visit '/players'
+    expect(page).to have_link('Hockey Teams', href: '/hockeyteams')
+  end
+
+  it 'has an edit and delete option for every player' do
+    
+    team_1 = HockeyTeam.create(
+      name: "Colorado Avalanche",
+      city: "Denver",
+      rank: 1,
+      original_franchise: false,
+      stanley_cups: 2
+    )
+    player = team_1.players.create(
+      name: "Trevor Suter",
+      age: 24,
+      attended_college: true,
+      years_played: 2
+    )
+    team_2 = HockeyTeam.create(
+      name: "Arizona Coyotes",
+      city: "Glendale",
+      rank: 31,
+      original_franchise: true,
+      stanley_cups: 0
+    )
+    player2 = team_2.players.create(
+      name: 'Jack Moulson',
+      age: 30,
+      attended_college: true,
+      years_played: 10
+    )
+
+    visit '/players'
+    expect(page).to have_link('Edit Player', href: "/players/#{player.id}/edit")
+    expect(page).to have_link('Edit Player', href: "/players/#{player2.id}/edit")
+    expect(page).to have_selector('form[action="/players/#{player.id}"], input[type=submit][value=delete]')
+    expect(page).to have_selector('form[action="/players/#{player2.id}"], input[type=submit][value=delete]')
+
+  end
 end
