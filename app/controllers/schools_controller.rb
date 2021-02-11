@@ -59,8 +59,8 @@ class SchoolsController < ApplicationController
     @school = School.find(params[:id])
     if params[:search]
       @students = @school.students.where('school_days_completed >= ?', params[:search])
-    # elsif name: 'Sort Students Alphabetically'
-    #   @students = @school.alphabetize
+    elsif params[:az]
+      @students = Student.order_by_name
     else
       @students = @school.students
     end

@@ -13,8 +13,8 @@ RSpec.describe 'As a visitor' do
     end
     it 'Can add school' do
       school_1 = School.create!(name: "Turing",
-                                days_in_school_year: 256,
-                                accepts_financial_aid: false)
+                 days_in_school_year: 256,
+               accepts_financial_aid: false)
 
     expect(School.all.count).to eq(1)
     end

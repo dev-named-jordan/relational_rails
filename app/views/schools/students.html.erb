@@ -6,12 +6,7 @@
   <%=form.submit 'Submit', name: 'Submit'%>
 <%end%><br>
 
-<a href="/schools/<%=@school.id%>/students" >Alphabetize Students</a><br><br>
-
-<%=form_with url:"/schools/#{@school.id}/students", method: :get do |form|%>
-  <%=form.label 'Sort names by alphabetical order: '%><br><br>
-  <%=form.submit 'Submit', name: 'Sort Students Alphabetically'%>
-<%end%><br>
+<p><%= link_to "Sort Names of Students Alphabetically", "/schools/#{@school.id}/students?az=sort" %></p>
 
 <%@students.each do |student|%>
   <li>Name - <%=student.name%></li><br>
