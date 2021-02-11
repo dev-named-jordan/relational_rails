@@ -90,4 +90,25 @@ RSpec.describe 'Individual Players Page', type: :feature do
 
     expect(page).to have_link('Edit Player', href: "/players/#{player.id}/edit")
   end
+
+  it 'has a link to the players and hockey teams index page' do
+
+    team_1 = HockeyTeam.create(
+      name: "Colorado Avalanche",
+      city: "Denver",
+      rank: 1,
+      original_franchise: false,
+      stanley_cups: 2
+    )
+    player = team_1.players.create(
+      name: "Trevor Suter",
+      age: 24,
+      attended_college: false,
+      years_played: 2
+    )
+
+    visit "/players/#{player.id}"
+    expect(page).to have_link('Players Who Played College', href: '/players')
+    expect(page).to have_link('Hockey Teams', href: '/hockeyteams')
+  end
 end

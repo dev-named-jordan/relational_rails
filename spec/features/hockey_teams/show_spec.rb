@@ -58,11 +58,38 @@ RSpec.describe "Individual Hockey Teams Pages", type: :feature do
       original_franchise: false,
       stanley_cups: 2
     )
+    player = team_1.players.create(
+      name: "Trevor Suter",
+      age: 24,
+      attended_college: true,
+      years_played: 2
+    )
 
     visit "/hockeyteams/#{team_1.id}"
     find("input[type=submit][value=delete]").click
 
     expect(href: '/hockeyteams')
     expect(page).to_not have_content(team_1.name)
+    expect(href: '/players').to_not have_content(player.name)
+  end
+
+  it 'Has a link for the players and hockey teams index page' do
+    team_1 = HockeyTeam.create(
+      name: "Colorado Avalanche",
+      city: "Denver",
+      rank: 1,
+      original_franchise: false,
+      stanley_cups: 2
+    )
+    player = team_1.players.create(
+      name: "Trevor Suter",
+      age: 24,
+      attended_college: true,
+      years_played: 2
+    )
+
+    visit "/hockeyteams/#{team_1.id}"
+    expect(page).to have_link("Players Who Played College", href: '/players')
+    expect(page).to have_link('Hockey Teams', href: '/hockeyteams')
   end
 end

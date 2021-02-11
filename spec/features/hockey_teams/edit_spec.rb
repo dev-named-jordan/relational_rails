@@ -21,4 +21,19 @@ RSpec.describe "Edit Team Page", type: :feature do
 
     expect(href: "/hockeyteams/#{team_2.id}")
   end
+
+  it 'Has a link to the players and hockey teams index page' do
+
+    team_2 = HockeyTeam.create(
+      name: "Arizona Coyotes",
+      city: "Glendale",
+      rank: 31,
+      original_franchise: true,
+      stanley_cups: 0
+    )
+
+    visit "/hockeyteams/#{team_2.id}/edit"
+    expect(page).to have_link('Players Who Played College', href: '/players')
+    expect(page).to have_link('Hockey Teams', href: '/hockeyteams')
+  end
 end
